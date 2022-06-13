@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +9,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 
 export class RegisterComponent {
-  constructor(private auth: AngularFireAuth) {}
-   
+   constructor(
+    private auth: AuthService
+   ){}
 
   inSubmission = false 
 
@@ -61,13 +62,9 @@ export class RegisterComponent {
    this.alertColor = 'blue'
    this.inSubmission = true
 
-   const { email, password } = this.registerForm.value
-
+   
    try {
-    const userCred = await this.auth.createUserWithEmailAndPassword(
-      email, password
-    )
-    console.log(userCred)
+    await this.auth.createUser(this.registerForm.value)
    } catch(e) {
      console.error(e)
 
