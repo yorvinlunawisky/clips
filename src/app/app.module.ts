@@ -8,12 +8,14 @@ import { NavComponent } from './nav/nav.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { SignOutComponent } from './auth-modal/sign-out/sign-out.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    SignOutComponent
   ],
   imports: [
     BrowserModule,
