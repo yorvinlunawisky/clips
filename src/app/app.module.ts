@@ -9,13 +9,17 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { SignOutComponent } from './auth-modal/sign-out/sign-out.component'
+import { SignOutComponent } from './auth-modal/sign-out/sign-out.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    SignOutComponent
+    SignOutComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
