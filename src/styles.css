@@ -3,6 +3,13 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/*** 
+      Temporary 
+                 ***/
+input:invalid {
+  animation: shake 300ms;
+}
+
 body {
     background-color: #161d31;
   }
@@ -250,3 +257,8 @@ body {
     }
   }
   
+  @keyframes shake {
+    25% { transform: translateX(4px); }
+    50% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
